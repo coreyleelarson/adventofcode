@@ -40,34 +40,34 @@ const part1 = input
   }, 0);
 
   const part2 = input
-  .trim()
-  .split('\n')
-  .reduce((sum, round) => {
-    const [opponent, expected] = round.split(' ');
+    .trim()
+    .split('\n')
+    .reduce((sum, round) => {
+      const [opponent, expected] = round.split(' ');
 
-    if (expected === 'X') {
-      sum += Scores.Lose;
-      if (opponent === 'A') sum += Scores.Scissors;
-      if (opponent === 'B') sum += Scores.Rock;
-      if (opponent === 'C') sum += Scores.Paper;
-    }
-    
-    if (expected === 'Y') {
-      sum += Scores.Draw;
-      if (opponent === 'A') sum += Scores.Rock;
-      if (opponent === 'B') sum += Scores.Paper;
-      if (opponent === 'C') sum += Scores.Scissors;
-    }
-    
-    if (expected === 'Z') {
-      sum += Scores.Win;
-      if (opponent === 'A') sum += Scores.Paper;
-      if (opponent === 'B') sum += Scores.Scissors;
-      if (opponent === 'C') sum += Scores.Rock;
-    }
+      if (expected === 'X') {
+        sum += Scores.Lose;
+        if (opponent === 'A') sum += Scores.Scissors;
+        if (opponent === 'B') sum += Scores.Rock;
+        if (opponent === 'C') sum += Scores.Paper;
+      }
+      
+      if (expected === 'Y') {
+        sum += Scores.Draw;
+        if (opponent === 'A') sum += Scores.Rock;
+        if (opponent === 'B') sum += Scores.Paper;
+        if (opponent === 'C') sum += Scores.Scissors;
+      }
+      
+      if (expected === 'Z') {
+        sum += Scores.Win;
+        if (opponent === 'A') sum += Scores.Paper;
+        if (opponent === 'B') sum += Scores.Scissors;
+        if (opponent === 'C') sum += Scores.Rock;
+      }
 
-    return sum;
-  }, 0);
+      return sum;
+    }, 0);
 
 console.log('Answer Part 1:', part1);
 console.log('Answer Part 2:', part2);
